@@ -64,3 +64,36 @@ p2.classList.contains("empat"); // false
 
 // element.classList.replace() : to replace the existing class to a new one
 p2.classList.replace("tiga", "empat"); // replace the class 'tiga' with 'empat'
+
+// document.createElement() -> creates a new element, new tag
+const pBaru = document.createElement("p");
+// document.createTextNode -> content
+const textP = document.createTextNode("Paragraf Baru");
+// node.appendChild() -> fill element with content
+pBaru.appendChild(textP);
+
+const sectionA = document.getElementById("a");
+sectionA.appendChild(pBaru); // put the element at the bottom
+
+const liBaru = document.createElement("li");
+const textLi = document.createTextNode("item baru");
+liBaru.appendChild(textLi);
+
+const ul = document.getElementsByTagName("ul")[0];
+// node.insertBefore() -> put the element before another element
+ul.insertBefore(liBaru, li2);
+
+const link = sectionA.querySelector("a");
+// parentNode.removeChild() -> delete element(child) from parent node
+sectionA.removeChild(link);
+
+const h2Baru = document.createElement("h2");
+const textH2 = document.createTextNode("Judul Baru");
+h2Baru.appendChild(textH2);
+
+// parentNode.replaceChild() -> replace existing element with a new element
+sectionB.replaceChild(h2Baru, p4);
+
+h2Baru.style.backgroundColor = "lightgreen";
+liBaru.style.backgroundColor = "lightgreen";
+pBaru.style.backgroundColor = "lightgreen";
