@@ -97,3 +97,13 @@ sectionB.replaceChild(h2Baru, p4);
 h2Baru.style.backgroundColor = "lightgreen";
 liBaru.style.backgroundColor = "lightgreen";
 pBaru.style.backgroundColor = "lightgreen";
+
+// addEventListener()
+h2Baru.addEventListener("click", function () {
+  const itemBaru = document.createElement("li");
+  const textItem = document.createTextNode("item baru");
+  itemBaru.appendChild(textItem);
+
+  ul.appendChild(itemBaru);
+});
+// event : click, when the element is clicked a new item will appear
