@@ -27,20 +27,24 @@ for (let i = 0; i < close.length; i++) {
 close.forEach(function (el) {
   el.addEventListener("click", function (e) {
     e.target.parentElement.style.display = "none";
+    // preventDefault() -> to stop the default event
+    // like tag a('close' tag is a) has a default event to navigate to another page
+    // so, if the target href is empty, it will simply refresh the page
+    e.preventDefault();
   });
 });
 
 // to traverse the elements, we can use :
+const nama = document.querySelector(".nama");
+
 // parentNode -> node
 // parentElement -> element
+console.log(nama.parentElement.parentElement); // return container
 // nextSibling -> node
+console.log(nama.nextSibling); // return space and space is node
 // nextElementSibling -> element
+console.log(nama.nextElementSibling); // return class telp, use this method to traverse the element
 // previousSibling -> node
 // previousElementSibling -> element
-
-const nama = document.querySelector(".nama");
-console.log(nama.parentElement.parentElement); // return container
-console.log(nama.nextSibling); // return space and space is node
-console.log(nama.nextElementSibling); // return class telp, use this method to traverse the element
 console.log(nama.previousElementSibling); // return class img
 console.log(nama.previousElementSibling.previousElementSibling); // retunr null
